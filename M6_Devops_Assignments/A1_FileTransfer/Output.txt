@@ -1,0 +1,13 @@
+Started by user Balaji Yoganantham
+Running as SYSTEM
+Building in workspace C:\Users\balaj\.jenkins\workspace\filetransferproject
+[filetransferproject] $ cmd /c call C:\Users\balaj\AppData\Local\Temp\jenkins8747538603127560198.bat
+
+C:\Users\balaj\.jenkins\workspace\filetransferproject>xcopy "C:\Users\balaj\OneDrive\Documents\Nexturn\git\Balaji-NexTurn-Program\M6_Devops_Assignments\A1_FileTransfer\source-directory" "C:\Users\balaj\OneDrive\Documents\Nexturn\git\Balaji-NexTurn-Program\M6_Devops_Assignments\A1_FileTransfer\target-directory" /E /I /H /Y 
+C:\Users\balaj\OneDrive\Documents\Nexturn\git\Balaji-NexTurn-Program\M6_Devops_Assignments\A1_FileTransfer\source-directory\data.csv
+C:\Users\balaj\OneDrive\Documents\Nexturn\git\Balaji-NexTurn-Program\M6_Devops_Assignments\A1_FileTransfer\source-directory\file1.txt
+C:\Users\balaj\OneDrive\Documents\Nexturn\git\Balaji-NexTurn-Program\M6_Devops_Assignments\A1_FileTransfer\source-directory\file2.txt
+3 File(s) copied
+
+C:\Users\balaj\.jenkins\workspace\filetransferproject>exit 0 
+Finished: SUCCESS
