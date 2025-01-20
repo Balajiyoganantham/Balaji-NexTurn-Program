@@ -1,0 +1,51 @@
+C:\Users\balaj\OneDrive\Documents\Nexturn\git\Balaji-NexTurn-Program\M4_DataEngineering_Assignments\A2_Sqlite3>sqlite3 db.sqlite3
+SQLite version 3.39.2 2022-07-21 15:24:47
+Enter ".help" for usage hints.
+sqlite> .tables
+Departments  Employees
+sqlite> .schema Departments
+CREATE TABLE Departments (
+    DepartmentID INTEGER PRIMARY KEY,
+    DepartmentName TEXT NOT NULL
+);
+sqlite> SELECT * FROM Employees;
+1|Alice|101|70000.0|2021-01-15
+2|Bob|102|60000.0|2020-03-10
+3|Charlie|101|80000.0|2022-05-20
+4|Diana|103|75000.0|2019-07-25
+sqlite> SELECT * FROM Departments;
+101|HR
+102|IT
+103|Finance
+sqlite>
+
+Queries:
+Q1. Write a query to list the names of employees hired after January 1, 2021.
+SELECT Name
+FROM Employees
+WHERE HireDate > '2021-01-01';
+
+Q2. Write a query to calculate the average salary of employees in each department.
+SELECT D.DepartmentName, AVG(E.Salary) AS AverageSalary
+FROM Employees E
+JOIN Departments D ON E.DepartmentID = D.DepartmentID
+GROUP BY D.DepartmentName;
+
+Q3. Write a query to find the department name where the total salary is the highest.
+SELECT D.DepartmentName
+FROM Employees E
+JOIN Departments D ON E.DepartmentID = D.DepartmentID
+GROUP BY D.DepartmentName
+ORDER BY SUM(E.Salary) DESC
+LIMIT 1;
+
+Q4. Write a query to list all departments that currently have no employees assigned.
+SELECT D.DepartmentName
+FROM Departments D
+LEFT JOIN Employees E ON D.DepartmentID = E.DepartmentID
+WHERE E.EmployeeID IS NULL;
+
+Q5. Write a query to fetch all employee details along with their department names.
+SELECT E.EmployeeID, E.Name, E.Salary, E.HireDate, D.DepartmentName
+FROM Employees E
+JOIN Departments D ON E.DepartmentID = D.DepartmentID;
